@@ -1,0 +1,594 @@
+/* =========================
+   THEME
+========================= */
+:root {
+    --bg: #0b0d12;
+    --surface: #121722;
+    --surface-hover: #192131;
+    --text: #f4f6fb;
+    --muted: #9ba5b7;
+    --accent: #8dbbff;
+    --border: #252c3a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 8%;
+    background: rgba(11, 13, 18, 0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span,
+.hero h1 span,
+.section h2 span,
+.about-section h2 span {
+    color: var(--accent);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar nav a,
+.back-to-top {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar nav a:hover,
+.back-to-top:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    min-height: 590px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 100px 12%;
+    background: radial-gradient(
+        ellipse at 80% 35%,
+        rgba(60, 105, 180, 0.18),
+        transparent 55%
+    );
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin: 12px 0;
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1.08;
+    letter-spacing: -3px;
+}
+
+.hero-description {
+    max-width: 540px;
+    margin: 20px 0 28px;
+    color: var(--muted);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.primary {
+    color: #0b0d12;
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.secondary {
+    background: transparent;
+}
+
+.download {
+    color: var(--accent);
+    border-color: #405777;
+}
+
+.secondary:hover,
+.download:hover {
+    background: #202b3c;
+}
+
+/* =========================
+   HERO META / TAGS
+========================= */
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 48px;
+}
+
+.hero-meta span,
+.project-tags span,
+.skill-list span {
+    padding: 6px 10px;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+/* =========================
+   COMMON SECTIONS
+========================= */
+.section {
+    padding: 90px 8%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.section h2,
+.about-section h2 {
+    margin: 0;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.25;
+    letter-spacing: -1.5px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 12px;
+}
+
+.section-note {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================
+   LANDSCAPE PROJECTS
+========================= */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #526987;
+    background: var(--surface-hover);
+}
+
+.project-image {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #202735;
+}
+
+.project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.04);
+}
+
+.project-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 9px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.project-info {
+    padding: 24px;
+}
+
+.project-category {
+    margin: 0;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.project-info h3 {
+    margin: 8px 0;
+    font-size: 23px;
+}
+
+.project-description,
+.about-description {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.project-tags,
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+/* =========================
+   PORTRAIT PROJECTS
+   세로형 게임 카드
+========================= */
+#portrait-projects .portrait-project-grid {
+    display: grid;
+    /* 카드 크기를 조금 키우고 왼쪽 정렬 */
+    grid-template-columns: repeat(2, minmax(0, 420px));
+    justify-content: start;
+    align-items: start;
+    gap: 28px;
+    width: 100%;
+}
+
+#portrait-projects .portrait-project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+#portrait-projects .portrait-project-card:hover {
+    transform: translateY(-5px);
+    border-color: #526987;
+    background: var(--surface-hover);
+}
+
+#portrait-projects .portrait-project-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #202735;
+}
+
+#portrait-projects .portrait-project-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 5;
+    overflow: hidden;
+    background: #202735;
+}
+
+#portrait-projects .portrait-project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.35s ease;
+}
+
+#portrait-projects .portrait-project-card:hover .portrait-project-image img {
+    transform: scale(1.02);
+}
+
+#portrait-projects .portrait-project-image .project-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+}
+
+#portrait-projects .portrait-project-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 18px;
+}
+
+#portrait-projects .portrait-project-info .project-category {
+    margin: 0;
+}
+
+#portrait-projects .portrait-project-info h3 {
+    margin: 7px 0;
+    font-size: 19px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+#portrait-projects .portrait-project-info .project-description {
+    margin: 7px 0;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+#portrait-projects .portrait-project-info .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 12px 0;
+}
+
+#portrait-projects .portrait-project-info .project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#portrait-projects .portrait-project-info .project-actions .button {
+    flex: 1 1 auto;
+    min-height: 36px;
+    padding: 7px 10px;
+    font-size: 11px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about-section {
+    border-top: 1px solid var(--border);
+    background: radial-gradient(
+        ellipse at 80% 50%,
+        rgba(60, 105, 180, 0.1),
+        transparent 60%
+    );
+}
+
+.about-description {
+    max-width: 620px;
+    margin: 24px 0;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 26px 8%;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 900px) {
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .section {
+        padding: 72px 6%;
+    }
+
+    #portrait-projects .portrait-project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    #portrait-projects .portrait-project-info {
+        padding: 16px;
+    }
+
+    #portrait-projects .portrait-project-info h3 {
+        font-size: 18px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 700px) {
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .navbar nav {
+        gap: 13px;
+    }
+
+    .navbar nav a {
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 520px;
+        padding: 80px 7%;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    #portrait-projects .portrait-project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    #portrait-projects .portrait-project-image {
+        aspect-ratio: 3 / 4;
+    }
+
+    #portrait-projects .portrait-project-info {
+        padding: 14px;
+    }
+
+    #portrait-projects .portrait-project-info h3 {
+        font-size: 16px;
+    }
+
+    #portrait-projects .portrait-project-info .project-description {
+        font-size: 12px;
+    }
+
+    #portrait-projects .portrait-project-info .project-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #portrait-projects .portrait-project-info .project-actions .button {
+        width: 100%;
+    }
+
+    footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding: 24px 5%;
+    }
+}
+
+/* 좁은 모바일에서는 세로형 카드도 한 열로 표시 */
+@media (max-width: 480px) {
+    #portrait-projects .portrait-project-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    #portrait-projects .portrait-project-image {
+        aspect-ratio: 3 / 4;
+    }
+
+    #portrait-projects .portrait-project-info {
+        padding: 18px;
+    }
+
+    #portrait-projects .portrait-project-info h3 {
+        font-size: 19px;
+    }
+
+    #portrait-projects .portrait-project-info .project-description {
+        font-size: 13px;
+    }
+
+    #portrait-projects .portrait-project-info .project-actions {
+        flex-direction: row;
+    }
+
+    #portrait-projects .portrait-project-info .project-actions .button {
+        width: auto;
+    }
+}
