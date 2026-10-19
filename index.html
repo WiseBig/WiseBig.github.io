@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <title>My Game Portfolio</title>
     <meta name="description"
@@ -27,34 +27,51 @@
 
     <main>
         <section id="home" class="hero">
-            <p class="eyebrow">GAME DEVELOPER PORTFOLIO</p>
+            <div class="hero-content">
+                <p class="eyebrow">
+                    INDEPENDENT GAME DEVELOPER
+                </p>
 
-            <h1>
-                I CREATE<br>
-                <span>MY OWN GAMES.</span>
-            </h1>
+                <h1>
+                    I CREATE<br>
+                    <span>MY OWN GAMES.</span>
+                </h1>
 
-            <p class="hero-description">
-                Unity로 직접 개발한 게임과 프로젝트를 소개합니다.
-                플레이 영상과 다운로드를 통해 제 작업물을 확인해 보세요.
-            </p>
+                <p class="hero-description">
+                    아이디어를 직접 플레이할 수 있는 게임으로 구현합니다.<br>
+                    게임 개발부터 테스트 자동화까지,<br>
+                    직접 만들고 경험한 프로젝트를 소개합니다.
+                </p>
 
-            <a href="#projects" class="button primary">
-                프로젝트 살펴보기 ↘
-            </a>
+                <div class="hero-actions">
+                    <a href="#projects" class="button primary">
+                        게임 살펴보기 ↘
+                    </a>
 
-            <div class="hero-meta">
-                <span>UNITY</span>
-                <span>C#</span>
-                <span>GAME DEVELOPMENT</span>
+                    <a href="#tools" class="button secondary">
+                        개발 도구 보기 ↗
+                    </a>
+                </div>
+
+                <div class="hero-meta">
+                    <span>UNITY</span>
+                    <span>C#</span>
+                    <span>GAME DEVELOPMENT</span>
+                    <span>TEST AUTOMATION</span>
+                </div>
             </div>
+
+            <a href="#projects" class="hero-scroll">
+                <span>EXPLORE PROJECTS</span>
+                <span class="scroll-arrow">↓</span>
+            </a>
         </section>
 
         <section id="projects" class="section">
             <div class="section-heading">
                 <div>
-                    <p class="eyebrow">MY WORK</p>
-                    <h2>Featured Projects<span>.</span></h2>
+                    <p class="eyebrow">MY PROJECTS</p>
+                    <h2>PC GAMES</h2>
                 </div>
                 <p class="section-note">
                     직접 기획하고 개발한 게임 프로젝트
@@ -65,12 +82,28 @@
 
                 <!-- PROJECT 01 -->
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image youtube-thumbnail">
                         <img
                             src="images/After-School-Sweets-Club.png"
-                            alt="첫 번째 게임 프로젝트 이미지"
+                            alt="방과후 디저트부 플레이 영상"
                             loading="lazy">
+
                         <span class="project-number">01</span>
+
+                        <button
+                            class="youtube-play"
+                            type="button"
+                            aria-label="방과후 디저트부 영상 재생"
+                            onclick="playYouTube(this, 'uwUEpqhKYZ0')">
+                            ▶
+                        </button>
+
+                        <iframe
+                            class="youtube-player"
+                            title="방과후 디저트부 플레이 영상"
+                            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                            allowfullscreen>
+                        </iframe>
                     </div>
 
                     <div class="project-info">
@@ -88,12 +121,6 @@
                         </div>
 
                         <div class="project-actions">
-                            <a class="button secondary"
-                               href="https://www.youtube.com/watch?v=uwUEpqhKYZ0"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                ▶ 플레이 영상
-                            </a>
                             <a class="button download"
                                href="https://github.com/WiseBig/After-School-Sweets-Club/releases/latest/download/After-School-Sweets-Club.zip"
                                 class="download-button">
@@ -105,12 +132,28 @@
 
                 <!-- PROJECT 02 -->
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image youtube-thumbnail">
                         <img
                             src="images/BlueArchess.png"
-                            alt="두 번째 게임 프로젝트 이미지"
+                            alt="BlueArchess 플레이 영상"
                             loading="lazy">
+
                         <span class="project-number">02</span>
+
+                        <button
+                            class="youtube-play"
+                            type="button"
+                            aria-label="BlueArchess 영상 재생"
+                            onclick="playYouTube(this, 'on1ZWBAWZz0')">
+                            ▶
+                        </button>
+
+                        <iframe
+                            class="youtube-player"
+                            title="BlueArchess 플레이 영상"
+                            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                            allowfullscreen>
+                        </iframe>
                     </div>
 
                     <div class="project-info">
@@ -128,12 +171,6 @@
                         </div>
 
                         <div class="project-actions">
-                            <a class="button secondary"
-                               href="https://www.youtube.com/watch?v=on1ZWBAWZz0"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                ▶ 플레이 영상
-                            </a>
                             <a class="button download"
                                href="https://github.com/WiseBig/BlueAchess/releases/latest/download/BlueAchess.zip"
                                 class="download-button">
@@ -145,12 +182,28 @@
 
                 <!-- PROJECT 03 -->
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image youtube-thumbnail">
                         <img
                             src="images/STELDodge.png"
-                            alt="세 번째 게임 프로젝트 이미지"
+                            alt="STELDodge 플레이 영상"
                             loading="lazy">
+
                         <span class="project-number">03</span>
+
+                        <button
+                            class="youtube-play"
+                            type="button"
+                            aria-label="STELDodge 영상 재생"
+                            onclick="playYouTube(this, 'm8fx0wpT7ks')">
+                            ▶
+                        </button>
+
+                        <iframe
+                            class="youtube-player"
+                            title="STELDodge 플레이 영상"
+                            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                            allowfullscreen>
+                        </iframe>
                     </div>
 
                     <div class="project-info">
@@ -168,12 +221,6 @@
                         </div>
 
                         <div class="project-actions">
-                            <a class="button secondary"
-                               href="https://www.youtube.com/watch?v=m8fx0wpT7ks"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                ▶ 플레이 영상
-                            </a>
                             <a class="button download"
                                href="https://github.com/WiseBig/STELDodge/releases/latest/download/STELDodge.zip"
                                 class="download-button">
@@ -190,8 +237,7 @@
         <section id="portrait-projects" class="section">
             <div class="section-heading">
                 <div>
-                    <p class="eyebrow">PORTRAIT FORMAT</p>
-                    <h2>Portrait Projects<span>.</span></h2>
+                    <h2>PC & MOBILE GAMES</h2>
                 </div>
                 <p class="section-note">
                     세로형 화면으로 제작한 게임 프로젝트
@@ -202,44 +248,67 @@
 
                 <!-- PROJECT 04 -->
                 <article class="portrait-project-card">
-                    <div class="portrait-project-image">
-                        <img src="images/JumPenguin.png"
-                            alt="세로형 게임 프로젝트 1"
-                            loading="lazy">
+                    <div class="portrait-project-image local-video-thumbnail">
+                        <img
+                            src="images/JumPenguin.png"
+                            alt="JumPenguin 게임 플레이 영상 썸네일"
+                            loading="lazy"
+                        >
+
                         <span class="project-number">04</span>
+
+                        <!-- 로컬 영상 재생 버튼 -->
+                        <button
+                            class="local-video-play"
+                            type="button"
+                            aria-label="JumPenguin 영상 재생"
+                            onclick="playLocalVideo(this)"
+                        >
+                            ▶
+                        </button>
+
+                        <!-- videos 폴더의 영상 -->
+                        <video
+                            class="local-video-player"
+                            controls
+                            playsinline
+                            preload="none"
+                            poster="images/JumPenguin.png"
+                        >
+                            <source src="videos/JumPenguin.mp4" type="video/mp4">
+                            브라우저에서 이 동영상을 재생할 수 없습니다.
+                        </video>
                     </div>
 
                     <div class="portrait-project-info">
-                        <p class="project-category">UNITY / GAME</p>
-                        <h3>게임 프로젝트 제목 1</h3>
+                        <p class="project-category">UNITY / ACTION ARCADE</p>
+                        <h3>JumPenguin</h3>
 
                         <p class="project-description">
-                            게임의 특징과 주요 시스템,
-                            직접 구현한 기능을 소개하세요.
+                            점프와 슬라이드로 장애물을 피하며
+                            높은 점수에 도전하는 세로형 게임입니다.
                         </p>
 
                         <div class="project-tags">
                             <span>Unity</span>
                             <span>C#</span>
-                            <span>PC / Mobile</span>
+                            <span>PC</span>
+                            <span>Android</span>
                         </div>
 
                         <div class="project-actions">
-                            <a class="button secondary"
-                            href="영상 URL"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                                ▶ 플레이 영상
+                            <a
+                                class="button download"
+                                href="https://github.com/WiseBig/JumPenguin/releases/latest/download/JumPenguin.zip"
+                            >
+                                ↓ PC 다운로드
                             </a>
 
-                            <a class="button download"
-                                href="PC 다운로드 URL">
-                                    ↓ PC 다운로드
-                            </a>
-
-                            <a class="button download mobile-download"
-                                href="모바일 다운로드 URL">
-                                    ↓ 모바일 다운로드
+                            <a
+                                class="button download mobile-download"
+                                href="https://github.com/WiseBig/JumPenguin/releases/latest/download/JumPenguin.apk"
+                            >
+                                ↓ Android 다운로드
                             </a>
                         </div>
                     </div>
@@ -306,79 +375,130 @@
                 </p>
             </div>
 
-            <article class="project-card tool-card">
-                <div class="project-image">
-                    <img
-                        src="images/TestAutomationTool.png"
-                        alt="게임 테스트 자동화 도구 화면"
-                        loading="lazy"
-                    >
-                </div>
+            <div class="project-grid">
 
-                <div class="project-info">
-                    <p class="project-category">C# / TEST AUTOMATION</p>
+                <!-- TOOL 01 -->
+                <article class="project-card tool-card">
 
-                    <h3>Game Test Automation Tool</h3>
+                    <!-- 가로형 썸네일 및 로컬 영상 -->
+                    <div class="project-image local-video-thumbnail">
+                        <img
+                            src="images/BlueArchess.png"
+                            alt="게임 테스트 자동화 도구 시연 영상 썸네일"
+                            loading="lazy"
+                        >
 
-                    <p class="project-description">
-                        게임 테스트 과정을 효율적으로 수행하기 위해
-                        직접 개발한 테스트 자동화 도구입니다.
-                        주요 기능과 테스트 수행 결과를 소개합니다.
-                    </p>
+                        <span class="project-number">T01</span>
 
-                    <div class="project-tags">
-                        <span>C#</span>
-                        <span>Test Automation</span>
-                        <span>QA</span>
+                        <button
+                            class="local-video-play"
+                            type="button"
+                            aria-label="게임 테스트 자동화 도구 시연 영상 재생"
+                            onclick="playLocalVideo(this)"
+                        >
+                            ▶
+                        </button>
+
+                        <video
+                            class="local-video-player"
+                            controls
+                            playsinline
+                            preload="none"
+                            poster="images/BlueArchess.png"
+                        >
+                            <source
+                                src="videos/BlueArchess.mp4"
+                                type="video/mp4"
+                            >
+                            브라우저에서 이 동영상을 재생할 수 없습니다.
+                        </video>
                     </div>
 
-                    <div class="project-actions">
-                        <a
-                            class="button secondary"
-                            href="테스트 도구 소개 영상 URL"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            ▶ 시연 영상
-                        </a>
+                    <!-- 도구 정보 -->
+                    <div class="project-info">
+                        <p class="project-category">C# / TEST AUTOMATION</p>
 
-                        <a
-                            class="button download"
-                            href="테스트 도구 다운로드 URL"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            ↓ 도구 다운로드
-                        </a>
+                        <h3>Game Test Automation Tool</h3>
+
+                        <p class="project-description">
+                            게임 테스트 과정을 효율적으로 수행하기 위해
+                            직접 개발한 테스트 자동화 도구입니다.
+                            주요 기능과 테스트 수행 결과를 소개합니다.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>C#</span>
+                            <span>Test Automation</span>
+                            <span>QA</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a
+                                class="button download"
+                                href="YOUR_TOOL_DOWNLOAD_URL"
+                            >
+                                ↓ 도구 다운로드
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </article>
+
+                </article>
+
+            </div>
         </section>
 
-
+        
         <section id="about" class="section about-section">
             <p class="eyebrow">ABOUT ME</p>
-            <h2>게임을 만들고,<br><span>문제를 해결합니다.</span></h2>
+
+            <h2>
+                게임을 만들고,<br>
+                <span>문제를 해결합니다.</span>
+            </h2>
 
             <p class="about-description">
-                게임을 직접 개발하며 기획부터 구현, 테스트와 수정까지
-                경험을 쌓고 있습니다. 각 프로젝트의 제작 과정과
-                기술적인 도전도 이곳에 기록할 예정입니다.
+                Unity와 C#을 활용해 아이디어를 실제 게임으로 구현하고,
+                개발 과정에서 발생하는 문제를 분석하고 해결하는 경험을 쌓고 있습니다.
+                게임 개발뿐 아니라 테스트 자동화 도구 제작에도 관심을 가지고
+                더 효율적이고 안정적인 개발 방법을 고민합니다.
             </p>
 
             <div class="skill-list">
                 <span>Unity</span>
                 <span>C#</span>
-                <span>Git</span>
+                <span>Git / GitHub</span>
                 <span>UI Development</span>
                 <span>Debugging</span>
+                <span>Test Automation</span>
             </div>
 
-            <a class="text-link"
-               href="mailto:your-email@example.com">
-                CONTACT ME ↗
-            </a>
+            <div class="about-links">
+                <a class="text-link"
+                href="#projects">
+                    PROJECTS ↓
+                </a>
+
+                <a class="text-link"
+                href="https://github.com/WiseBig"
+                target="_blank"
+                rel="noopener noreferrer">
+                    GITHUB ↗
+                </a>
+
+                <a class="text-link"
+                href="https://www.youtube.com/@WiseBig"
+                target="_blank"
+                rel="noopener noreferrer">
+                    YOUTUBE ↗
+                </a>
+
+                <a class="text-link"
+                href="mailto:skydj0519@naver.com">
+                    EMAIL ↗
+                </a>
+            </div>
         </section>
+
     </main>
 
     <footer>

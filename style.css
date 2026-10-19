@@ -592,3 +592,336 @@ footer p {
         width: auto;
     }
 }
+
+/* ==================================
+   YOUTUBE VIDEO - LANDSCAPE PROJECTS
+================================== */
+
+/* 썸네일 영역 */
+#projects .project-image.youtube-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+}
+
+/* 썸네일 이미지 */
+#projects .project-image.youtube-thumbnail > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: none;
+}
+
+/* 영상 재생 버튼 */
+#projects .youtube-thumbnail .youtube-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 68px;
+    height: 48px;
+    padding: 0;
+
+    color: #fff;
+    background: #e62117;
+    border: none;
+    border-radius: 12px;
+
+    font-size: 25px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#projects .youtube-thumbnail .youtube-play:hover {
+    background: #c91c13;
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* 유튜브 영상: 기본은 숨김 */
+#projects .youtube-thumbnail .youtube-player {
+    display: none;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #000;
+}
+
+/* 영상이 시작되면 썸네일과 버튼 숨김 */
+#projects .youtube-thumbnail.is-playing > img,
+#projects .youtube-thumbnail.is-playing > .youtube-play {
+    display: none;
+}
+
+/* 영상 표시 */
+#projects .youtube-thumbnail.is-playing > .youtube-player {
+    display: block;
+}
+
+/* 영상 재생 중에는 썸네일 확대 효과 제거 */
+#projects .project-card:hover
+.project-image.youtube-thumbnail > img {
+    transform: none;
+}
+
+/* ==================================
+   LOCAL VIDEO - PORTRAIT PROJECTS
+================================== */
+
+#portrait-projects .local-video-thumbnail {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+/* 썸네일 이미지 */
+#portrait-projects .local-video-thumbnail > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 재생 버튼 */
+#portrait-projects .local-video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 68px;
+    height: 48px;
+    padding: 0;
+
+    color: #fff;
+    background: #e62117;
+    border: none;
+    border-radius: 12px;
+
+    font-size: 25px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#portrait-projects .local-video-play:hover {
+    background: #c91c13;
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* 실제 동영상: 처음에는 숨김 */
+#portrait-projects .local-video-player {
+    display: none;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+    border: 0;
+}
+
+/* 재생 상태 */
+#portrait-projects .local-video-thumbnail.is-playing > img,
+#portrait-projects .local-video-thumbnail.is-playing > .local-video-play {
+    display: none;
+}
+
+#portrait-projects .local-video-thumbnail.is-playing > .local-video-player {
+    display: block;
+}
+
+/* ==================================
+   LOCAL VIDEO - DEVELOPMENT TOOLS
+================================== */
+
+#tools .local-video-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+}
+
+#tools .local-video-thumbnail > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 중앙 재생 버튼 */
+#tools .local-video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 68px;
+    height: 48px;
+    padding: 0;
+
+    color: #fff;
+    background: #e62117;
+    border: none;
+    border-radius: 12px;
+
+    font-size: 25px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#tools .local-video-play:hover {
+    background: #c91c13;
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* 기본적으로 영상 숨김 */
+#tools .local-video-player {
+    display: none;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+    border: 0;
+}
+
+/* 재생 상태 */
+#tools .local-video-thumbnail.is-playing > img,
+#tools .local-video-thumbnail.is-playing > .local-video-play {
+    display: none;
+}
+
+#tools .local-video-thumbnail.is-playing > .local-video-player {
+    display: block;
+}
+
+.about-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.about-links .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Hero buttons */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.hero-actions .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 22px;
+    text-decoration: none;
+    transition: transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.hero-actions .button:hover {
+    transform: translateY(-3px);
+}
+
+/* Secondary button */
+.button.secondary {
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+}
+
+.button.secondary:hover {
+    background: var(--surface-hover);
+}
+
+/* Hero technology tags */
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-top: 32px;
+}
+
+.hero-meta span {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+}
+
+/* Scroll indicator */
+.hero-scroll {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 56px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.scroll-arrow {
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.hero-scroll:hover .scroll-arrow {
+    transform: translateY(4px);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .hero-actions {
+        gap: 10px;
+    }
+
+    .hero-actions .button {
+        padding: 0 16px;
+        font-size: 13px;
+    }
+
+    .hero-meta {
+        gap: 10px 14px;
+    }
+
+    .hero-scroll {
+        margin-top: 40px;
+    }
+}
